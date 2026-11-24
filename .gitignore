@@ -1,2 +1,5 @@
 # Ignore LaTeX build files
 out/
+
+# MacOS-specific files
+.DS_Store

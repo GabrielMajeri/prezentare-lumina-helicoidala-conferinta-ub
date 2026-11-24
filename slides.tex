@@ -14,12 +14,25 @@
 \section{Introducere}
 
 \begin{frame}
-  \frametitle{Motivație}
+  \frametitle{Ce este lumina?}
 
-  \begin{itemize}
-    \item Lumina este o \textbf{oscilație transversă} a câmpului electromagnetic.
-    \item La fel ca orice undă transversă, poate avea \textbf{moment cinetic} (\textit{angular momentum}), pe care îl descompunem într-o componentă datorată polarizării (\textbf{moment cinetic de spin}) și una datorată formei frontului de undă (\textbf{moment cinetic orbital}).
-  \end{itemize}
+  Lumina este o \textbf{oscilație transversă} a câmpului electromagnetic.
+
+  \vspace{0.5cm}
+  \begin{center}
+    \resizebox{0.95\textwidth}{!}{\inputtikz{figures/em_wave.tex}}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Momentul cinetic al luminii}
+
+  La fel ca orice undă transversă, poate avea \textbf{moment cinetic} (\textit{angular momentum}), pe care îl descompunem într-o componentă datorată polarizării (\textbf{moment cinetic de spin}) și una datorată formei frontului de undă (\textbf{moment cinetic orbital}).
+
+  \vspace{0.35cm}
+  \begin{center}
+    \resizebox{0.96\textwidth}{!}{\inputtikz{figures/sam_oam_diagram.tex}}
+  \end{center}
 \end{frame}
 
 \begin{frame}
@@ -33,6 +46,115 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Motivație}
+
+  De ce ne interesează momentul cinetic al luminii? Deoarece momentul cinetic poate fi \textbf{transferat} către particule cu sarcină, cum ar fi electronii, oferindu-ne o nouă modalitate de a \textbf{manipula materia}. \\[1em]
+
+  De asemenea, poate fi folosit pentru a \textbf{codifica informație} \cite{Emile2025} sau pentru a excita anumite \textbf{rezonanțe nucleare} \cite{Taira2018}.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Momentul cinetic de spin}
+
+  \begin{itemize}
+    \item \textbf{Polarizarea} luminii a fost descoperită din 1669, de fizicanul danez Rasmus Bartholin.
+    \item \textbf{Momentul cinetic de spin} a fost măsurat experimental pentru prima dată în 1936 \cite{Beth1936}.
+    \item În prezent, momentul cinetic de spin este folosit în aplicații precum \textbf{microscopie}, \textbf{comunicații}, \textbf{teoria cuantică a informației} sau \textbf{manipularea optică a particulelor}.
+    \item Putem produce lumină cu moment cinetic de spin peste tot \textbf{spectrul optic}, de la lumină vizibilă (folosind \emph{filtre polarizante}) până la raze X (\emph{radiație sincrotron}).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Momentul cinetic orbital}
+
+  \begin{itemize}
+    \item \textbf{Momentul cinetic orbital} apare implicit în lucrările lui Poynting \cite{Poynting1909}, dar a fost analizat teoretic și studiat experimental de-abia de către Allen \textit{et al.}\ în 1992 \cite{Allen1992}.
+    \item Ne oferă o nouă dimensiune pentru a manipula lumina, cu aplicații în \textbf{microscopie}, \textbf{comunicații}, \textbf{chimie} sau \textbf{fizică nucleară}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Spectrul electromagnetic}
+
+  Lumina vizibilă este doar o mică parte din \textbf{spectrul electromagnetic}, care se întinde de la unde radio până la raze \(\gamma\). \\[0.5em]
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/em_spectrum.png}
+    \caption{Imagine de pe \href{https://commons.wikimedia.org/wiki/File:EM_spectrum.svg}{Wikipedia}, creată de Philip Ronan}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Spectrul electromagnetic}
+
+  Putem produce cu ușurință lumină cu moment cinetic orbital în spectrul vizibil, dar \textbf{nu} și în spectrul de raze X (sau dincolo de el), unde lungimea de undă este mult mai mică.
+\end{frame}
+
+\begin{frame}
+  \textbf{Întrebare:} Cum putem produce \textbf{lumină cu moment cinetic orbital} în \textbf{spectrul de raze X}? Putem găsi surse \textbf{compacte} și de \textbf{intensitate mare}?
+\end{frame}
+
+\begin{frame}
+  \frametitle{Împrăștiere Thomson inversă}
+
+  Există o metodă clasică pentru a obține radiație de frecvență înaltă plecând de la un laser obișnuit (de ex.\ 800nm, lumină roșie): \textbf{împrăștiere Thomson inversă} (\emph{inverse Thomson scattering}).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Împrăștiere Thomson}
+
+  În \textbf{împrăștierea Thomson directă}, un foton se ciocnește de un electron, care ricoșează (își schimbă traiectoria) și reflectă mai departe fotonul.
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{compton-scattering.png}
+    \caption{Imagine de pe \href{https://commons.wikimedia.org/wiki/File:Compton-scattering.svg}{Wikipedia}, creată de JabberWok}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Împrăștiere Thomson inversă}
+
+  În \textbf{împrăștierea Thomson inversă}, un electron care se mișcă foarte repede (viteză \emph{relativistă}, aproape de viteza luminii) are suficientă energie\footnote{\(E^2 = m^2 c^4 + p^2 c^2\), care în cazul unei particule în repaus devine \(E = mc^2\).} pentru a \textbf{crește} frecvența fotonului împrăștiat.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Efectul Doppler relativist}
+
+  Când electronii se mișcă rapid (\(> 99\%\) din viteza luminii), fenomenul care are loc se cheamă \textbf{efectul Doppler relativist}: asemănător cu o ambulanță care vine înspre noi și produce un sunet de \textbf{frecvență mai înaltă}. \\[1em]
+
+  Formula pentru frecvența radiată \(\omega_1\) este
+  \[
+    \omega_1 \approx 4 \gamma^2 \omega_0
+  \]
+  unde \(\gamma = 1/\sqrt{1 - v^2/c^2}\) este \textbf{factorul Lorentz}.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Transfer de moment cinetic orbital}
+
+  Rezultatele anterioare din literatură \cite{Taira2018,Hu2021} sugerează că momentul cinetic orbital al fascicului incident se \textbf{transferă} radiației emise de electronii pe care îi accelerează.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Problema coerenței}
+
+  Nu este suficient să știm că un electron accelerat de un astfel de fascicul produce un foton cu moment cinetic orbital. Vrem să producem o emisie intensă de fotoni cu același OAM, iar pentru asta avem nevoie de \textbf{coerență}.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Emisie coerentă vs.\ incoerentă}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{electric_field_norm_incoherent.pdf}
+    \includegraphics[width=0.48\textwidth]{electric_field_norm_coherent.pdf}
+    \caption{Diferența dintre emisia \textbf{incoerentă} (stânga, în care câmpurile electrice ale fotonilor nu sunt în fază) și cea \textbf{coerentă} (dreapta, în care câmpurile electrice ale fotonilor sunt sincronizate).}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
   \frametitle{Schema experimentală}
 
   \begin{figure}
@@ -42,9 +164,11 @@
   \end{figure}
 \end{frame}
 
+% TODO: ACC
+
 \begin{frame}
   \centering{
-    \huge{Mulțumesc pentru atenție!}
+    \huge{Mulțumesc!}
   }
 \end{frame}
 

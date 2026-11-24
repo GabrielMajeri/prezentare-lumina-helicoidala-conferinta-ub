@@ -1,0 +1,32 @@
+\tikzexternalize[prefix=cache/]
+
+% Ensure cache directories exist and forward -output-directory to child lualatex runs
+\newcommand{\tikzexternaloutdirflag}{}
+
+% tex-fmt: off
+\directlua{
+  local outdir = status.output_directory
+  local function ensure_dir(path)
+    local acc = path:sub(1, 1) == "/" and "/" or ""
+    for part in path:gmatch("[^/]+") do
+        acc = (acc == "" or acc == "/") and (acc .. part) or (acc .. "/" .. part)
+        lfs.mkdir(acc)
+    end
+  end
+  function _G.ensure_tikz_cache_dir(filename)
+    local base = (outdir and outdir ~= "") and (outdir:gsub("/+$", "") .. "/cache/") or "cache/"
+    local dir = filename:match("^(.*)/[^/]+$")
+    ensure_dir(dir and (base .. dir) or base)
+  end
+  ensure_tikz_cache_dir("")
+  if outdir and outdir ~= "" then
+    token.set_macro("tikzexternaloutdirflag", '-output-directory="' .. outdir .. '" ')
+  end
+}
+% tex-fmt: on
+
+\tikzset{
+  external/system call={%
+    lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode \tikzexternaloutdirflag -jobname "\image" "\texsource"%
+  }
+}

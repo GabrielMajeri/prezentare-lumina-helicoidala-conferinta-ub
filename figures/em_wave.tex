@@ -1,0 +1,67 @@
+% Transverse electromagnetic wave propagating along +z (right-handed axes: x up, y oblique out, z right).
+% Electric field E oscillates along x; magnetic field B oscillates along y in phase so E x B || +z.
+\begin{tikzpicture}[>=stealth, font=\footnotesize]
+  \tikzset{declare function={
+      lam=4.4;
+      k=2*pi/lam;
+      AE=1.05;
+      AB=1.05;
+      yx=-0.60;
+      yy=-0.38;
+  }}
+
+  % 1. Back half-cycles of B (sin(kz) < 0, pointing along -y)
+  \foreach \za/\zb in {2.2/4.4, 6.6/8.8} {
+    \fill[blue!12, opacity=0.7]
+    (\za,0) -- plot[domain=\za:\zb, samples=50, variable=\z, smooth]
+    ({\z+yx*AB*sin(deg(k*\z))}, {yy*AB*sin(deg(k*\z))}) -- (\zb,0) -- cycle;
+    \foreach \n in {1,...,5} {
+      \pgfmathsetmacro{\z}{\za + (\zb-\za)*\n/6}
+      \draw[->, blue!75!black, line width=0.7pt]
+      (\z,0) -- ({\z+yx*AB*sin(deg(k*\z))}, {yy*AB*sin(deg(k*\z))});
+    }
+    \draw[blue!75!black, very thick, line cap=round, domain=\za:\zb, samples=50, variable=\z, smooth]
+    plot ({\z+yx*AB*sin(deg(k*\z))}, {yy*AB*sin(deg(k*\z))});
+  }
+
+  % 2. Coordinate axes and propagation axis
+  \draw[->, black!75] (0,0) -- (0,1.45) node[above] {$x$};
+  \draw[->, black!75] (0,0) -- ({1.35*yx},{1.35*yy}) node[below left, inner sep=1.5pt] {$y$};
+  \draw[->, black!75] (-0.35,0) -- (9.6,0) node[right] {$z$};
+
+  % 3. Electric field E in the xz-plane
+  \fill[red!12, opacity=0.7]
+  (0,0) -- plot[domain=0:8.8, samples=160, variable=\z, smooth] (\z, {AE*sin(deg(k*\z))}) -- (8.8,0) -- cycle;
+  \foreach \za/\zb in {0/2.2, 2.2/4.4, 4.4/6.6, 6.6/8.8} {
+    \foreach \n in {1,...,5} {
+      \pgfmathsetmacro{\z}{\za + (\zb-\za)*\n/6}
+      \draw[->, red!75!black, line width=0.7pt] (\z,0) -- (\z, {AE*sin(deg(k*\z))});
+    }
+  }
+  \draw[red!75!black, very thick, line cap=round, domain=0:8.8, samples=160, variable=\z, smooth]
+  plot (\z, {AE*sin(deg(k*\z))});
+
+  % 4. Front half-cycles of B (sin(kz) > 0, pointing along +y)
+  \foreach \za/\zb in {0/2.2, 4.4/6.6} {
+    \fill[blue!12, opacity=0.7]
+    (\za,0) -- plot[domain=\za:\zb, samples=50, variable=\z, smooth]
+    ({\z+yx*AB*sin(deg(k*\z))}, {yy*AB*sin(deg(k*\z))}) -- (\zb,0) -- cycle;
+    \foreach \n in {1,...,5} {
+      \pgfmathsetmacro{\z}{\za + (\zb-\za)*\n/6}
+      \draw[->, blue!75!black, line width=0.7pt]
+      (\z,0) -- ({\z+yx*AB*sin(deg(k*\z))}, {yy*AB*sin(deg(k*\z))});
+    }
+    \draw[blue!75!black, very thick, line cap=round, domain=\za:\zb, samples=50, variable=\z, smooth]
+    plot ({\z+yx*AB*sin(deg(k*\z))}, {yy*AB*sin(deg(k*\z))});
+  }
+
+  % 5. Labels, wavelength, and propagation direction
+  \node[red!75!black, font=\small] at (1.8, 1.02) {$\symbf{E}$};
+  \node[blue!75!black, font=\small] at (0.3, -0.65) {$\symbf{B}$};
+
+  \draw[gray!70, densely dashed] (1.1, {AE}) -- (1.1, 1.44);
+  \draw[gray!70, densely dashed] (5.5, {AE}) -- (5.5, 1.44);
+  \draw[<->, black!80] (1.1, 1.33) -- (5.5, 1.33) node[midway, fill=white, inner sep=2pt] {$\lambda$};
+
+  \draw[->, very thick, black!85] (8.9, 0.34) -- (9.65, 0.34) node[midway, above=1pt, font=\small] {$\symbf{k}$};
+\end{tikzpicture}

@@ -21,17 +21,20 @@
 
 \addbibresource{references.bib}
 
-% Support for inserting images in the slides
+% Support for inserting images
 \usepackage{graphicx}
 
 \graphicspath{{./figures/}}
+
+% Unified shell escape interface
+\usepackage{shellesc}
 
 % Support for drawing beautiful figures
 \usepackage{tikz}
 
 % Support for externalizing TikZ figures (for caching)
 \usetikzlibrary{external}
-% \tikzexternalize[prefix=cache/]
+\input{tikz-externalize-config.tex}
 
 % Basic math commands
 \usepackage{amsmath}
@@ -46,6 +49,7 @@
 
 % Based on https://tex.stackexchange.com/a/482560/263993
 \newcommand{\inputtikz}[1]{%
+  \directlua{ensure_tikz_cache_dir("\luaescapestring{#1}")}%
   \tikzsetnextfilename{#1}%
   \input{#1}%
 }
