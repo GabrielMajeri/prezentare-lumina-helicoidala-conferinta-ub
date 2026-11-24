@@ -1,0 +1,61 @@
+\documentclass{beamer}
+
+% Advanced font selection for XeLaTeX and LuaLaTeX
+\usepackage{fontspec}
+
+% Support for interactive hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks,
+  linkcolor=,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+% Support for drawing beautiful figures
+\usepackage{tikz}
+
+% Disable the rendering of navigation symbols in the bottom-right
+\setbeamertemplate{navigation symbols}{}
+
+% Insert a title slide at the beginning of each new section
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}\insertsectionhead\par%
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+}
+
+% Presentation metadata
+\title{Emisie superradiantă de lumină cu moment cinetic orbital}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+  \frametitle{Motivație}
+
+  \begin{itemize}
+    \item La fel ca orice undă transversală, lumina (oscilație a câmpului electromagnetic) poate avea moment unghiular (\textit{angular momentum}).
+      % TODO
+  \end{itemize}
+
+  % TODO
+\end{frame}
+
+\begin{frame}
+  \frametitle{Schema experimentală}
+
+  \begin{figure}
+    \centering
+    \resizebox{\columnwidth}{!}{\input{figures/experiment_geometry.tex}}
+    \caption{Reprezentare vizuală a metodei propuse. Un fascicol laser LG care se propagă în direcția \(-z\) lovește un fascicol de electroni relativiști care se mișcă în direcția \(+z\). Radiația emisă este măsurată pe un detector aflat la o distanță \(Z\).}
+  \end{figure}
+\end{frame}
+
+\end{document}

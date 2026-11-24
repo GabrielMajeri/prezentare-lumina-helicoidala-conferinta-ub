@@ -1,0 +1,161 @@
+{
+    "editor.formatOnSave": true,
+    "latex-workshop.latex.outDir": "%DIR%/out",
+    "latex-workshop.formatting.latex": "tex-fmt",
+    "latex-workshop.formatting.latexindent.path": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux/latexindent",
+    "latex-workshop.formatting.tex-fmt.path": "/mnt/modules/software/tools/tex-fmt/0.5.7/tex-fmt",
+    "latex-workshop.latex.recipe.default": "latexmk (lualatex)",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "-auxdir=%AUXDIR%",
+                "%DOC%"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux:/usr/bin"
+            }
+        },
+        {
+            "name": "lualatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-lualatex",
+                "-outdir=%OUTDIR%",
+                "-auxdir=%AUXDIR%",
+                "%DOC%"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux::/usr/bin"
+            }
+        },
+        {
+            "name": "xelatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-xelatex",
+                "-outdir=%OUTDIR%",
+                "-auxdir=%AUXDIR%",
+                "%DOC%"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux:/usr/bin"
+            }
+        },
+        {
+            "name": "latexmk_rconly",
+            "command": "latexmk",
+            "args": [
+                "%DOC%"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux:/usr/bin"
+            }
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux:/usr/bin"
+            }
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux:/usr/bin"
+            }
+        },
+        {
+            "name": "rnw2tex",
+            "command": "Rscript",
+            "args": [
+                "-e",
+                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux:/usr/bin"
+            }
+        },
+        {
+            "name": "jnw2tex",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux:/usr/bin"
+            }
+        },
+        {
+            "name": "jnw2texminted",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux:/usr/bin"
+            }
+        },
+        {
+            "name": "pnw2tex",
+            "command": "pweave",
+            "args": [
+                "-f",
+                "tex",
+                "%DOC_EXT%"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux:/usr/bin"
+            }
+        },
+        {
+            "name": "pnw2texminted",
+            "command": "pweave",
+            "args": [
+                "-f",
+                "texminted",
+                "%DOC_EXT%"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux:/usr/bin"
+            }
+        },
+        {
+            "name": "tectonic",
+            "command": "tectonic",
+            "args": [
+                "--synctex",
+                "--keep-logs",
+                "--print",
+                "%DOC%.tex"
+            ],
+            "env": {
+                "PATH": "/mnt/modules/software/tools/texlive/2026/bin/x86_64-linux:/usr/bin"
+            }
+        }
+    ]
+}
