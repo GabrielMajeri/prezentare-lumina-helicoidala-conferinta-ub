@@ -3,6 +3,10 @@
 % Advanced font selection for XeLaTeX and LuaLaTeX
 \usepackage{fontspec}
 
+% Add support for Romanian
+\usepackage{polyglossia}
+\setdefaultlanguage{romanian}
+
 % Support for interactive hyperlinks
 \usepackage{hyperref}
 \hypersetup{
@@ -12,11 +16,48 @@
   urlcolor=blue
 }
 
+% Bibliography management support
+\usepackage{biblatex}
+
+\addbibresource{references.bib}
+
+% Support for inserting images in the slides
+\usepackage{graphicx}
+
+\graphicspath{{./figures/}}
+
 % Support for drawing beautiful figures
 \usepackage{tikz}
 
+% Support for externalizing TikZ figures (for caching)
+\usetikzlibrary{external}
+% \tikzexternalize[prefix=cache/]
+
+% Basic math commands
+\usepackage{amsmath}
+% Common mathematical symbols
+\usepackage{amssymb}
+
+% Advanced mathematical commands
+\usepackage{mathtools}
+
+% Encode mathematical symbols using Unicode characters
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+
+% Based on https://tex.stackexchange.com/a/482560/263993
+\newcommand{\inputtikz}[1]{%
+  \tikzsetnextfilename{#1}%
+  \input{#1}%
+}
+
+% Change the default Beamer theme
+\usetheme{Warsaw}
+
 % Disable the rendering of navigation symbols in the bottom-right
 \setbeamertemplate{navigation symbols}{}
+
+% Disable list of sections in the header
+\setbeamertemplate{headline}{}
 
 % Insert a title slide at the beginning of each new section
 \AtBeginSection[]{
@@ -26,36 +67,24 @@
     \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
       \usebeamerfont{title}\insertsectionhead\par%
     \end{beamercolorbox}
-    \vfill
   \end{frame}
 }
 
+% Definitions of custom commands
+\input{commands}
+
 % Presentation metadata
 \title{Emisie superradiantă de lumină cu moment cinetic orbital}
+\subtitle{prin împrăștierea Thomson inversă a unui fascicul laser Laguerre-Gauss de un mănunchi de electroni relativiști}
+\author{Gabriel Majeri \and Mădălina Boca \and Virgil Băran}
+\institute{
+  Facultatea de Fizică \\
+  Universitatea din București
+}
+\date{26 noiembrie 2026}
 
 \begin{document}
 
-\frame{\titlepage}
-
-\begin{frame}
-  \frametitle{Motivație}
-
-  \begin{itemize}
-    \item La fel ca orice undă transversală, lumina (oscilație a câmpului electromagnetic) poate avea moment unghiular (\textit{angular momentum}).
-      % TODO
-  \end{itemize}
-
-  % TODO
-\end{frame}
-
-\begin{frame}
-  \frametitle{Schema experimentală}
-
-  \begin{figure}
-    \centering
-    \resizebox{\columnwidth}{!}{\input{figures/experiment_geometry.tex}}
-    \caption{Reprezentare vizuală a metodei propuse. Un fascicol laser LG care se propagă în direcția \(-z\) lovește un fascicol de electroni relativiști care se mișcă în direcția \(+z\). Radiația emisă este măsurată pe un detector aflat la o distanță \(Z\).}
-  \end{figure}
-\end{frame}
+\input{slides.tex}
 
 \end{document}
