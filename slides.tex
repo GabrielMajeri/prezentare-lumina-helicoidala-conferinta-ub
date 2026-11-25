@@ -69,7 +69,7 @@
 
   \begin{itemize}
     \item \textbf{Momentul cinetic orbital} apare implicit în lucrările lui Poynting \cite{Poynting1909}, dar a fost analizat teoretic și studiat experimental de-abia de către Allen \textit{et al.}\ în 1992 \cite{Allen1992}.
-    \item Ne oferă o nouă dimensiune pentru a manipula lumina, cu aplicații în \textbf{microscopie}, \textbf{comunicații}, \textbf{chimie} sau \textbf{fizică nucleară}.
+    \item Ne oferă o nouă dimensiune pentru a manipula lumina, cu aplicații în \textbf{microscopie} \cite{Ashrafian2025}, \textbf{comunicații} \cite{Zhou2016}, \textbf{chimie} \cite{Begin2025} sau \textbf{fizică nucleară} \cite{Taira2018}.
   \end{itemize}
 \end{frame}
 
@@ -141,7 +141,17 @@
 \begin{frame}
   \frametitle{Transfer de moment cinetic orbital}
 
-  Rezultatele anterioare din literatură \cite{Taira2018,Hu2021} sugerează că momentul cinetic orbital al fascicului incident se \textbf{transferă} radiației emise de electronii pe care îi accelerează.
+  Rezultatele anterioare din literatură \cite{Taira2018,Hu2021,Chen2022} sugerează că momentul cinetic orbital al fascicului incident se \textbf{transferă} radiației emise de electronii pe care îi accelerează.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Transfer de moment cinetic orbital}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chen_oam_transfer.png}
+    \caption{Figura 4 din \cite{Chen2022}. Studiul citat nu menționează coerența radiației emise (metodele PIC nici măcar nu pot studia această proprietate).}
+  \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -162,6 +172,33 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Coerența}
+
+  Să ne imaginăm \textbf{ansamblu coral}. Dacă fiecare persoană cântă la întâmplare, rezultatul va fi un \textbf{zgomot incoerent}. Dacă toți cântă aceeași melodie în același timp, rezultatul va fi o \textbf{armonie coerentă}.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Problema cu rezultatele din literatură}
+
+  Majoritatea rezultatelor din literatură se concentrează pe simularea \textbf{împrăștierii Thomson inverse} folosind metoda \emph{particle-in-cell} (\textbf{PIC}), care nu poate studia \textbf{coerența} radiației emise.
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{nuclear-plasma-pic.png}
+    \caption{Exemplu de simulare PIC pentru o plasmă nucleară, de pe \href{https://boltzplatz.eu/intro-particle-in-cell/}{boltzplatz.eu}.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Contribuția noastră}
+
+  \begin{itemize}
+    \item În lucrarea noastră, propunem o metodă de a produce \textbf{radiație coerentă cu moment cinetic orbital} în spectrul de raze X folosind \textbf{împrăștiere Thomson inversă} a unui fascicul laser Laguerre-Gauss de un mănunchi de electroni relativiști.
+    \item Simulăm mișcarea electronilor individuali folosind \textbf{ecuațiile lui Maxwell} și calculăm exact radiația emisă folosind \textbf{potențialele Liénard-Wiechert}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
   \frametitle{Schema experimentală}
 
   \begin{figure}
@@ -169,6 +206,26 @@
     \resizebox{\columnwidth}{!}{\inputtikz{figures/experiment_geometry.tex}}
     \caption{Reprezentare vizuală a metodei propuse. Un fascicul laser LG care se propagă în direcția \(-z\) lovește un mănunchi de electroni relativiști care se mișcă în direcția \(+z\). Radiația emisă este măsurată pe un detector aflat la o distanță \(Z\).}
   \end{figure}
+\end{frame}
+
+% \begin{frame}
+%   \frametitle{Simulări numerice}
+
+%   \begin{itemize}
+%     \item Pentru a putea înțelege și realiza în practică astfel de experimente, avem nevoie de \textbf{simulări numerice} care să ne spună la ce să ne așteptăm.
+%     \item Lucrările existente din literatură se concentrează pe metoda \emph{particle-in-cell} (\textbf{PIC}), care nu poate studia \textbf{coerența} radiației emise.
+%     \item Codul nostru simulează mișcarea electronilor individuali folosind \textbf{ecuațiile lui Maxwell} și calculează exact radiația emisă folosind \textbf{potențialele Liénard-Wiechert}.
+%   \end{itemize}
+% \end{frame}
+
+\begin{frame}
+  \frametitle{Codul de simulare numerică}
+
+  \begin{itemize}
+    \item Codul nostru de simulare este scris în \href{https://www.python.org/}{\textbf{Python}} și se bazează pe biblioteca \href{https://docs.jax.dev/en/latest/notebooks/thinking_in_jax.html}{\textbf{JAX}}.
+    \item JAX este o bibliotecă de calcul numeric care permite \textbf{derivarea automată} a funcțiilor și \textbf{compilarea} lor pentru a rula pe GPU-uri.
+    \item Codul nostru este \textbf{open-source} și poate fi găsit pe \href{https://github.com/GabrielMajeri/electrodynamics-simulations}{\texttt{GabrielMajeri/electrodynamics-simulations}}.
+  \end{itemize}
 \end{frame}
 
 \section{Rezultate}
@@ -213,4 +270,16 @@
     &\symbf{\nabla} \times \symbf{B} = \mu_0 \symbf{J} + \mu_0 \epsilon_0 \frac{\partial \symbf{E}}{\partial t} \tag{Ampère-Maxwell} \\[0.2em]
     &\symbf{F} = q \left(\symbf{E} + \symbf{v} \times \symbf{B}\right) \tag{Forța Lorentz}
   \end{align*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Potențialele Liénard-Wiechert}
+
+  Potențialele scalar și vectorial pentru radiația emisă de o sarcină în mișcare sunt date de formulele Liénard-Wiechert, care se scriu în funcție de poziția observatorului \(\symbf{x_0}\) și de timpul întârziat \(t_r\),
+
+  \begin{align*}
+    \Phi\left(\symbf{x}_0, t_r\right) = \frac{e_0}{4 \pi \epsilon_0} \, \frac{1}{\abs{\symbf{x}_0 - \symbf{r}_0 (t)}} \, \frac{1}{1 - \symbf{\beta}(t_r) \cdot \symbf{n}(t_r)} \\[0.5em]
+    \symbf{A} (\symbf{x}_0, t_r) = \frac{e_0}{4 \pi \epsilon_0} \, \frac{1}{\abs{\symbf{x}_0 - \symbf{r}_0(t)}} \, \frac{\symbf{\beta}(t_r)}{1 - \symbf{\beta}(t_r) \cdot \symbf{n}(t_r)}
+  \end{align*}
+unde \(\symbf{r}_0(t)\) este poziția particulei, \(\symbf{\beta}(t_r) = \symbf{v}(t_r) / c\) este factorul Lorentz și \(\symbf{n}(\symbf{x}_0, t_r)) = \symbf{R}(\symbf{x}_0, t_r)) / R(\symbf{x}_0, t_r))\) este direcția de observație.
 \end{frame}
