@@ -208,15 +208,33 @@
   \end{figure}
 \end{frame}
 
-% \begin{frame}
-%   \frametitle{Simulări numerice}
+\begin{frame}
+  \frametitle{Discul de electroni}
 
-%   \begin{itemize}
-%     \item Pentru a putea înțelege și realiza în practică astfel de experimente, avem nevoie de \textbf{simulări numerice} care să ne spună la ce să ne așteptăm.
-%     \item Lucrările existente din literatură se concentrează pe metoda \emph{particle-in-cell} (\textbf{PIC}), care nu poate studia \textbf{coerența} radiației emise.
-%     \item Codul nostru simulează mișcarea electronilor individuali folosind \textbf{ecuațiile lui Maxwell} și calculează exact radiația emisă folosind \textbf{potențialele Liénard-Wiechert}.
-%   \end{itemize}
-% \end{frame}
+  Pentru a obține emisia coerentă a radiației împrăștiate, trebuie ca electronii să fie \textbf{grupați} într-un \textbf{mănunchi relativist} cu dimensiuni mai mici decât lungimea de undă a fasciculului incident. \\[1em]
+
+  De asemenea, trebuie să se miște \textbf{aproape de viteza luminii}, pentru a obține efectul Doppler relativist.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oglinda relativistă}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/relativistic_plasma_mirror.jpg}
+    \caption{Oglindă relativistă formată de plasmă \cite{Kiriyama2015}, folosită pentru a reflecta radiația emisă de mănunchiul de electroni. }
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Transferul de moment cinetic orbital}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/extended_oam_vector_configuration.pdf}
+    \caption{Reflecția momentului cinetic orbital (OAM) al radiației emise. Momentul cinetic orbital reflectat preia direcția mănunchiului de electroni, dar cu sens opus.}
+  \end{figure}
+\end{frame}
 
 \begin{frame}
   \frametitle{Codul de simulare numerică}
@@ -228,7 +246,45 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Infrastructura de calcul}
+
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      Toate simulările numerice au fost rulate pe \textbf{nodul cu GPU} (NVIDIA Hopper H100)
+      din cadrul \textbf{ACC (Advanced Computing Center)} al Universității din București.
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{figures/acc_gpu_node.jpg}
+        \caption{Nodul cu GPU din ACC-UB, folosit pentru simulările numerice.}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \section{Rezultate}
+
+\begin{frame}
+  \frametitle{Emisie coerentă pe detector}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/electric_field_norm.pdf}
+    \caption{Câmpul electric integrat, măsurat pe un detector aflat la distanță mare față de mănunchiul de electroni.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Emisie coerentă pe detector}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/electric_field_x.pdf}
+    \caption{Proiecția pe \(x\) a câmpului electric măsurat pe detector (\(\symbf{E}_{x}\))}
+  \end{figure}
+\end{frame}
 
 \begin{frame}
   \frametitle{Spectrul radiației emise}
@@ -236,13 +292,52 @@
   \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{figures/electric_field_spectrum.pdf}
-    \caption{Spectrul Fourier al câmpului electric emis, demonstrând conversia la o frecvență mai înaltă: \(\omega_1 \approx 22.8 = 4 \gamma^2 \omega_0\), cu \(\gamma = 10\) și \(\omega_0 = 0.057\).}
+    \caption{Spectrul Fourier al câmpului electric emis, demonstrând conversia la o frecvență mai înaltă: \(\omega_1 \approx 22.8 = 4 \gamma^2 \omega_0\), cu \(\gamma = 10\) și \(\omega_0 = 0.057\)}
   \end{figure}
 \end{frame}
 
-\section{Concluzie}
+\begin{frame}
+  \frametitle{Vortexul optic}
 
-% TODO: ACC
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/detector_vortex_phase.pdf}
+    \caption{Faza radiației emise, arătând formarea unui vortex optic}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Densitatea de moment cinetic orbital (OAM)}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/detector_oam_density.pdf}
+    \caption{Densitatea de moment cinetic orbital (OAM) a radiației emise, măsurată pe detector (\(\diff L_z / \diff A\))}
+  \end{figure}
+\end{frame}
+
+\section{Concluzii}
+
+\begin{frame}
+  \frametitle{Concluzii}
+  \begin{itemize}
+    \item Lumina poate fi ,,învârtită'' ca un tirbușon, dobândind astfel \textbf{moment cinetic orbital}, pe care îl putem folosi pentru a dezvolta noi metode de a interacționa cu materia.
+    \item Reflexia luminii de pe o \textbf{oglindă zburătoare relativistă} comprimă lungimea de undă, amplifică coerent emisia și conservă momentul cinetic orbital.
+    \item Simulările numerice eficiente ne permit să explorăm aceste regimuri extreme și să pregătim \textbf{viitoarele experimente}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Planuri de viitor}
+
+  În viitor, ne dorim să testăm și \textbf{experimental} această metodă, folosind infrastructura disponibilă în cadrul Facultății de Fizică sau a institutelor de pe platforma Măgurele (INFLPR, ELI-NP).
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/eli-np-laser-system.jpg}
+    \caption{Sistemul de lasere de la ELI-NP. Imagine de pe \href{https://www.worldrecordacademy.org}{worldrecordacademy.org}}
+  \end{figure}
+\end{frame}
 
 \begin{frame}
   \centering{
