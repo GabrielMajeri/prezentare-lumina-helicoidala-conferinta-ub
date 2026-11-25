@@ -18,20 +18,20 @@
 
   Lumina este o \textbf{oscilație transversă} a câmpului electromagnetic.
 
-  \vspace{0.5cm}
+  \vspace{0.35cm}
   \begin{center}
-    \resizebox{0.95\textwidth}{!}{\inputtikz{figures/em_wave.tex}}
+    \resizebox{0.76\textwidth}{!}{\inputtikz{figures/em_wave.tex}}
   \end{center}
 \end{frame}
 
 \begin{frame}
   \frametitle{Momentul cinetic al luminii}
 
-  La fel ca orice undă transversă, poate avea \textbf{moment cinetic} (\textit{angular momentum}), pe care îl descompunem într-o componentă datorată polarizării (\textbf{moment cinetic de spin}) și una datorată formei frontului de undă (\textbf{moment cinetic orbital}).
+  La fel ca orice undă transversă, lumina poate avea \textbf{moment cinetic} (\textit{angular momentum}), pe care îl descompunem într-o componentă datorată polarizării (\textbf{moment cinetic de spin}) și una datorată formei frontului de undă (\textbf{moment cinetic orbital}).
 
-  \vspace{0.35cm}
+  \vspace{0.25cm}
   \begin{center}
-    \resizebox{0.96\textwidth}{!}{\inputtikz{figures/sam_oam_diagram.tex}}
+    \resizebox{0.80\textwidth}{!}{\inputtikz{figures/sam_oam_diagram.tex}}
   \end{center}
 \end{frame}
 
@@ -40,7 +40,7 @@
 
   \begin{figure}
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/oam_vs_spin.jpg}
+    \includegraphics[height=0.64\textheight]{figures/oam_vs_spin.jpg}
     \caption{Cadru dintr-un video de pe \href{https://en.wikipedia.org/wiki/File:OAM_vs_spin_video.ogg}{Wikipedia}, creat de Jozum Bjada}
   \end{figure}
 \end{frame}
@@ -57,30 +57,51 @@
   \frametitle{Momentul cinetic de spin}
 
   \begin{itemize}
-    \item \textbf{Polarizarea} luminii a fost descoperită din 1669, de fizicanul danez Rasmus Bartholin.
+    \item \textbf{Polarizarea} luminii a fost descoperită în 1669, de fizicianul danez Rasmus Bartholin.
     \item \textbf{Momentul cinetic de spin} a fost măsurat experimental pentru prima dată în 1936 \cite{Beth1936}.
     \item În prezent, momentul cinetic de spin este folosit în aplicații precum \textbf{microscopie}, \textbf{comunicații}, \textbf{teoria cuantică a informației} sau \textbf{manipularea optică a particulelor}.
-    \item Putem produce lumină cu moment cinetic de spin peste tot \textbf{spectrul optic}, de la lumină vizibilă (folosind \emph{filtre polarizante}) până la raze X (\emph{radiație sincrotron}).
+    \item Putem produce lumină cu moment cinetic de spin pe tot \textbf{spectrul electromagnetic}, de la lumină vizibilă (folosind \emph{filtre polarizante}) până la raze X (\emph{radiație sincrotron}).
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Momentul cinetic de spin}
+
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.65\textheight]{figures/polarizer-car-mirror.jpg}
+    \caption{Imagine de pe \href{https://commons.wikimedia.org/wiki/File:Polarizer_Through_Glass.jpg}{Wikipedia}, creată de Sbittante}
+  \end{figure}
 \end{frame}
 
 \begin{frame}
   \frametitle{Momentul cinetic orbital}
 
   \begin{itemize}
-    \item \textbf{Momentul cinetic orbital} apare implicit în lucrările lui Poynting \cite{Poynting1909}, dar a fost analizat teoretic și studiat experimental de-abia de către Allen \textit{et al.}\ în 1992 \cite{Allen1992}.
+    \item \textbf{Momentul cinetic orbital (OAM)} apare implicit în lucrările lui Poynting \cite{Poynting1909}, dar a fost analizat teoretic și studiat experimental de-abia de către Allen \textit{et al.}\ în 1992 \cite{Allen1992}.
+    \item Cel mai cunoscut exemplu este \textbf{fasciculul laser Laguerre-Gauss (LG)}, al cărui front de undă are formă de spirală (tirbușon) și un profil de intensitate inelar (,,gogoașă'').
     \item Ne oferă o nouă dimensiune pentru a manipula lumina, cu aplicații în \textbf{microscopie} \cite{Ashrafian2025}, \textbf{comunicații} \cite{Zhou2016}, \textbf{chimie} \cite{Begin2025} sau \textbf{fizică nucleară} \cite{Taira2018}.
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Spectrul electromagnetic}
-
-  Lumina vizibilă este doar o mică parte din \textbf{spectrul electromagnetic}, care se întinde de la unde radio până la raze \(\gamma\). \\[0.5em]
+  \frametitle{Momentul cinetic orbital}
 
   \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{figures/em_spectrum.png}
+    \includegraphics[width=0.9\textwidth]{helix-oam.png}
+    \caption{Imagine de pe \href{https://commons.wikimedia.org/wiki/File:Helix_oam.png}{Wikipedia}, creată de E-karimi}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Spectrul electromagnetic}
+
+  Lumina vizibilă este doar o mică parte din \textbf{spectrul electromagnetic}, care se întinde de la unde radio până la raze \(\gamma\). \\[0.3em]
+
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.56\textheight]{figures/em_spectrum.png}
     \caption{Imagine de pe \href{https://commons.wikimedia.org/wiki/File:EM_spectrum.svg}{Wikipedia}, creată de Philip Ronan}
   \end{figure}
 \end{frame}
@@ -92,7 +113,11 @@
 \end{frame}
 
 \begin{frame}
-  \textbf{Întrebare:} Cum putem produce \textbf{lumină cu moment cinetic orbital} în \textbf{spectrul de raze X}? Putem găsi surse \textbf{compacte} și de \textbf{intensitate mare}?
+  \frametitle{Întrebarea de cercetare}
+
+  \begin{block}{Întrebare}
+    Cum putem produce \textbf{lumină cu moment cinetic orbital} în \textbf{spectrul de raze X}? Putem găsi surse \textbf{compacte} și de \textbf{intensitate mare}?
+  \end{block}
 \end{frame}
 
 \section{Metoda propusă}
@@ -100,19 +125,18 @@
 \begin{frame}
   \frametitle{Împrăștiere Thomson inversă}
 
-  Există o metodă clasică pentru a obține radiație de frecvență înaltă plecând de la un laser obișnuit (de ex.\ 800nm, lumină roșie): \textbf{împrăștiere Thomson inversă} (\emph{inverse Thomson scattering}).
+  Există o metodă clasică pentru a obține radiație de frecvență înaltă plecând de la un laser obișnuit (de ex.\ \(800\,\text{nm}\), infraroșu apropiat): \textbf{împrăștiere Thomson inversă} (\emph{inverse Thomson scattering}).
 \end{frame}
 
 \begin{frame}
-  \frametitle{Împrăștiere Thomson}
+  \frametitle{Împrăștiere Thomson directă}
 
-  În \textbf{împrăștierea Thomson directă}, un foton se ciocnește de un electron, care ricoșează (își schimbă traiectoria) și reflectă mai departe fotonul.
+  În \textbf{împrăștierea Thomson directă}, un foton interacționează cu un electron aflat în repaus, punându-l în oscilație; electronul re-emite fotonul într-o altă direcție cu \textbf{aceeași frecvență} (\(\omega_1 = \omega_0\)).
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{compton-scattering.png}
-    \caption{Imagine de pe \href{https://commons.wikimedia.org/wiki/File:Compton-scattering.svg}{Wikipedia}, creată de JabberWok}
-  \end{figure}
+  \vspace{0.35cm}
+  \begin{center}
+    \resizebox{0.76\textwidth}{!}{\inputtikz{figures/thomson_scattering.tex}}
+  \end{center}
 \end{frame}
 
 \begin{frame}
@@ -120,28 +144,30 @@
 
   În \textbf{împrăștierea Thomson inversă}, un electron care se mișcă foarte repede (viteză \emph{relativistă}, aproape de viteza luminii) are suficientă energie\footnote{\(E^2 = m^2 c^4 + p^2 c^2\), care în cazul unei particule în repaus devine \(E = mc^2\).} pentru a \textbf{crește} frecvența fotonului împrăștiat.
 
-  \vspace{0.45cm}
+  \vspace{0.3cm}
   \begin{center}
-    \resizebox{0.96\textwidth}{!}{\inputtikz{figures/inverse_thomson_scattering.tex}}
+    \resizebox{0.80\textwidth}{!}{\inputtikz{figures/inverse_thomson_scattering.tex}}
   \end{center}
 \end{frame}
 
 \begin{frame}
   \frametitle{Efectul Doppler relativist}
 
-  Când electronii se mișcă rapid (\(> 99\%\) din viteza luminii), fenomenul care are loc se cheamă \textbf{efectul Doppler relativist}: asemănător cu o ambulanță care vine înspre noi și produce un sunet de \textbf{frecvență mai înaltă}. \\[1em]
+  Când electronii se mișcă rapid (\(> 99\%\) din viteza luminii), fenomenul care are loc se cheamă \textbf{efectul Doppler relativist}: asemănător cu o ambulanță care vine înspre noi și produce un sunet de \textbf{frecvență mai înaltă}. \\[0.8em]
 
   Formula pentru frecvența radiată \(\omega_1\) este
   \[
     \omega_1 \approx 4 \gamma^2 \omega_0
   \]
-  unde \(\gamma = 1/\sqrt{1 - v^2/c^2}\) este \textbf{factorul Lorentz}.
+  unde \(\gamma = 1/\sqrt{1 - v^2/c^2}\) este \textbf{factorul Lorentz}. \\[0.6em]
+
+  De exemplu, pentru \(\gamma = 10\) (\(v \approx 99{,}5\%\,c\)), frecvența crește de \textbf{400 de ori}!
 \end{frame}
 
 \begin{frame}
   \frametitle{Transfer de moment cinetic orbital}
 
-  Rezultatele anterioare din literatură \cite{Taira2018,Hu2021,Chen2022} sugerează că momentul cinetic orbital al fascicului incident se \textbf{transferă} radiației emise de electronii pe care îi accelerează.
+  Rezultatele anterioare din literatură \cite{Taira2018,Hu2021,Chen2022} sugerează că momentul cinetic orbital al fasciculului incident se \textbf{transferă} radiației emise de electronii accelerați de acesta.
 \end{frame}
 
 \begin{frame}
@@ -149,43 +175,60 @@
 
   \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chen_oam_transfer.png}
-    \caption{Figura 4 din \cite{Chen2022}. Studiul citat nu menționează coerența radiației emise (metodele PIC nici măcar nu pot studia această proprietate).}
+    \includegraphics[height=0.58\textheight]{figures/chen_oam_transfer.png}
+    \caption{Figura 4 din \cite{Chen2022}: evoluția momentului cinetic al radiației în urma reflexiei pe o oglindă relativistă.}
   \end{figure}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Problema coerenței}
+  \frametitle{Problema coerenței și superradianța}
 
-  Nu este suficient să știm că un electron accelerat de un astfel de fascicul produce un foton cu moment cinetic orbital. Vrem să producem o emisie intensă de fotoni cu același OAM, iar pentru asta avem nevoie de \textbf{coerență}.
+  Nu este suficient să știm că un singur electron produce un foton cu moment cinetic orbital. Vrem să producem o emisie \textbf{intensă} de fotoni cu același OAM, iar pentru asta avem nevoie de \textbf{coerență}. \\[1em]
+
+  Când toți cei \(N\) electroni emit \textbf{în fază}, intensitatea radiației crește proporțional cu \textbf{\(N^2\)} (nu cu \(N\)) --- un regim numit \textbf{emisie superradiantă}.
 \end{frame}
 
 \begin{frame}
-  \frametitle{Emisie coerentă vs.\ incoerentă}
+  \frametitle{Analogie: coerența și superradianța}
+
+  Să ne imaginăm \textbf{un ansamblu coral}: \\[0.8em]
+
+  \begin{itemize}
+    \item Dacă fiecare persoană cântă la întâmplare, rezultatul va fi un \textbf{zgomot incoerent}.
+    \item Dacă toți cântă aceeași melodie sincronizat, undele se adună constructiv într-o \textbf{armonie coerentă}, mult mai intensă (\textbf{superradiantă}).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Emisie incoerentă vs.\ coerentă}
 
   \begin{figure}
     \centering
-    \includegraphics[width=0.48\textwidth]{electric_field_norm_incoherent.pdf}
-    \includegraphics[width=0.48\textwidth]{electric_field_norm_coherent.pdf}
-    \caption{Diferența dintre emisia \textbf{incoerentă} (stânga, în care câmpurile electrice ale fotonilor nu sunt în fază) și cea \textbf{coerentă} (dreapta, în care câmpurile electrice ale fotonilor sunt sincronizate).}
+    \begin{columns}[T]
+      \begin{column}{0.46\textwidth}
+        \centering
+        \textbf{Emisie incoerentă}\\[0.25em]
+        \includegraphics[height=0.50\textheight]{electric_field_norm_incoherent.pdf}
+      \end{column}
+      \begin{column}{0.46\textwidth}
+        \centering
+        \textbf{Emisie coerentă (superradiantă)}\\[0.25em]
+        \includegraphics[height=0.50\textheight]{electric_field_norm_coherent.pdf}
+      \end{column}
+    \end{columns}
+    \caption{Diferența dintre emisia \textbf{incoerentă} (stânga: câmpurile fotonilor nu sunt în fază) și cea \textbf{coerentă} (dreapta: câmpurile sunt sincronizate și formează un profil inelar curat).}
   \end{figure}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Coerența}
-
-  Să ne imaginăm \textbf{ansamblu coral}. Dacă fiecare persoană cântă la întâmplare, rezultatul va fi un \textbf{zgomot incoerent}. Dacă toți cântă aceeași melodie în același timp, rezultatul va fi o \textbf{armonie coerentă}.
 \end{frame}
 
 \begin{frame}
   \frametitle{Problema cu rezultatele din literatură}
 
-  Majoritatea rezultatelor din literatură se concentrează pe simularea \textbf{împrăștierii Thomson inverse} folosind metoda \emph{particle-in-cell} (\textbf{PIC}), care nu poate studia \textbf{coerența} radiației emise.
+  Majoritatea studiilor din literatură folosesc simulări \emph{particle-in-cell} (\textbf{PIC}), care sunt excelente pentru dinamica plasmei, dar nu pot rezolva cu ușurință \textbf{coerența} radiației la lungimi de undă foarte mici (raze X / \(\gamma\)), unde emisia este tratată de obicei incoerent.
 
   \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{nuclear-plasma-pic.png}
-    \caption{Exemplu de simulare PIC pentru o plasmă nucleară, de pe \href{https://boltzplatz.eu/intro-particle-in-cell/}{boltzplatz.eu}.}
+    \includegraphics[height=0.44\textheight]{nuclear-plasma-pic.png}
+    \caption{Exemplu de simulare PIC pentru o plasmă, de pe \href{https://boltzplatz.eu/intro-particle-in-cell/}{boltzplatz.eu}.}
   \end{figure}
 \end{frame}
 
@@ -193,8 +236,8 @@
   \frametitle{Contribuția noastră}
 
   \begin{itemize}
-    \item În lucrarea noastră, propunem o metodă de a produce \textbf{radiație coerentă cu moment cinetic orbital} în spectrul de raze X folosind \textbf{împrăștiere Thomson inversă} a unui fascicul laser Laguerre-Gauss de un mănunchi de electroni relativiști.
-    \item Simulăm mișcarea electronilor individuali folosind \textbf{ecuațiile lui Maxwell} și calculăm exact radiația emisă folosind \textbf{potențialele Liénard-Wiechert}.
+    \item În lucrarea noastră, analizăm producerea de \textbf{radiație coerentă (superradiantă) cu moment cinetic orbital} în spectrul de raze X prin \textbf{împrăștiere Thomson inversă} a unui fascicul laser \textbf{Laguerre-Gauss (LG)} de un mănunchi de electroni relativiști.
+    \item Simulăm traiectoriile electronilor individuali folosind \textbf{ecuația forței Lorentz} și calculăm exact, coerent, radiația emisă pe baza \textbf{ecuațiilor lui Maxwell} (\textbf{potențialele Liénard-Wiechert}).
   \end{itemize}
 \end{frame}
 
@@ -203,17 +246,19 @@
 
   \begin{figure}
     \centering
-    \resizebox{\columnwidth}{!}{\inputtikz{figures/experiment_geometry.tex}}
-    \caption{Reprezentare vizuală a metodei propuse. Un fascicul laser LG care se propagă în direcția \(-z\) lovește un mănunchi de electroni relativiști care se mișcă în direcția \(+z\). Radiația emisă este măsurată pe un detector aflat la o distanță \(Z\).}
+    \resizebox{!}{0.56\textheight}{\inputtikz{figures/experiment_geometry.tex}}
+    \caption{Reprezentare vizuală a metodei propuse. Un fascicul laser Laguerre-Gauss (LG) care se propagă în direcția \(-z\) lovește un mănunchi de electroni relativiști care se mișcă în direcția \(+z\). Radiația emisă este măsurată pe un detector aflat la distanța \(Z\).}
   \end{figure}
 \end{frame}
 
 \begin{frame}
   \frametitle{Discul de electroni}
 
-  Pentru a obține emisia coerentă a radiației împrăștiate, trebuie ca electronii să fie \textbf{grupați} într-un \textbf{mănunchi relativist} cu dimensiuni mai mici decât lungimea de undă a fasciculului incident. \\[1em]
+  Pentru a obține emisia coerentă (superradiantă), trebuie ca electronii să fie \textbf{grupați} într-un \textbf{mănunchi relativist} a cărui grosime longitudinală este mai mică decât \textbf{lungimea de undă a radiației emise}. \\[0.8em]
 
-  De asemenea, trebuie să se miște \textbf{aproape de viteza luminii}, pentru a obține efectul Doppler relativist.
+  De asemenea, electronii trebuie să se miște \textbf{aproape de viteza luminii} pentru a obține efectul Doppler relativist. \\[0.8em]
+
+  Practic, această grupare se poate obține prin tehnici de \textbf{\emph{microbunching}} sau prin foițe ultra-subțiri de electroni accelerate laser (\textbf{oglinzi relativiste}).
 \end{frame}
 
 \begin{frame}
@@ -221,18 +266,8 @@
 
   \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/relativistic_plasma_mirror.jpg}
-    \caption{Oglindă relativistă formată de plasmă \cite{Kiriyama2015}, folosită pentru a reflecta radiația emisă de mănunchiul de electroni. }
-  \end{figure}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Transferul de moment cinetic orbital}
-
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/extended_oam_vector_configuration.pdf}
-    \caption{Reflecția momentului cinetic orbital (OAM) al radiației emise. Momentul cinetic orbital reflectat preia direcția mănunchiului de electroni, dar cu sens opus.}
+    \includegraphics[height=0.58\textheight]{figures/relativistic_plasma_mirror.jpg}
+    \caption{Oglindă relativistă formată din electronii unei plasme \cite{Kiriyama2015}, care reflectă și comprimă pulsul laser incident.}
   \end{figure}
 \end{frame}
 
@@ -241,7 +276,7 @@
 
   \begin{itemize}
     \item Codul nostru de simulare este scris în \href{https://www.python.org/}{\textbf{Python}} și se bazează pe biblioteca \href{https://docs.jax.dev/en/latest/notebooks/thinking_in_jax.html}{\textbf{JAX}}.
-    \item JAX este o bibliotecă de calcul numeric care permite \textbf{derivarea automată} a funcțiilor și \textbf{compilarea} lor pentru a rula pe GPU-uri.
+    \item JAX este o bibliotecă de calcul numeric care permite \textbf{derivarea automată} a funcțiilor și \textbf{compilarea} lor pentru a rula eficient pe GPU-uri.
     \item Codul nostru este \textbf{open-source} și poate fi găsit pe \href{https://github.com/GabrielMajeri/electrodynamics-simulations}{\texttt{GabrielMajeri/electrodynamics-simulations}}.
   \end{itemize}
 \end{frame}
@@ -249,15 +284,15 @@
 \begin{frame}
   \frametitle{Infrastructura de calcul}
 
-  \begin{columns}
-    \begin{column}{0.6\textwidth}
+  \begin{columns}[c]
+    \begin{column}{0.56\textwidth}
       Toate simulările numerice au fost rulate pe \textbf{nodul cu GPU} (NVIDIA Hopper H100)
       din cadrul \textbf{ACC (Advanced Computing Center)} al Universității din București.
     \end{column}
-    \begin{column}{0.4\textwidth}
+    \begin{column}{0.40\textwidth}
       \begin{figure}
         \centering
-        \includegraphics[width=\textwidth]{figures/acc_gpu_node.jpg}
+        \includegraphics[height=0.62\textheight]{figures/acc_gpu_node.jpg}
         \caption{Nodul cu GPU din ACC-UB, folosit pentru simulările numerice.}
       \end{figure}
     \end{column}
@@ -267,53 +302,103 @@
 \section{Rezultate}
 
 \begin{frame}
-  \frametitle{Emisie coerentă pe detector}
+  \frametitle{Profilul intensității pe detector}
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/electric_field_norm.pdf}
-    \caption{Câmpul electric integrat, măsurat pe un detector aflat la distanță mare față de mănunchiul de electroni.}
-  \end{figure}
+  \begin{columns}[c]
+    \begin{column}{0.54\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[height=0.66\textheight]{figures/electric_field_norm.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}
+        \item Câmpul electric integrat măsurat pe un detector aflat la distanță mare.
+        \item \textbf{Profil inelar} (tip ,,gogoașă'') curat și simetric --- semnătura unui fascicul cu OAM.
+        \item Centrul întunecat indică singularitatea de fază a vortexului optic.
+        \item Absența zgomotului confirmă \textbf{emisia coerentă (superradiantă)}.
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Emisie coerentă pe detector}
+  \frametitle{Structura în spirală a câmpului electric}
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.75\textwidth]{figures/electric_field_x.pdf}
-    \caption{Proiecția pe \(x\) a câmpului electric măsurat pe detector (\(\symbf{E}_{x}\))}
-  \end{figure}
+  \begin{columns}[c]
+    \begin{column}{0.54\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[height=0.66\textheight]{figures/electric_field_x.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}
+        \item Proiecția pe axa \(x\) a câmpului electric (\(\symbf{E}_x\)) pe detector.
+        \item Fronturile de undă formează o \textbf{spirală clară} (brațe pozitive și negative alternante).
+        \item Arată direct că ,,răsucirea'' fasciculului laser incident s-a păstrat după împrăștiere.
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
   \frametitle{Spectrul radiației emise}
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.75\textwidth]{figures/electric_field_spectrum.pdf}
-    \caption{Spectrul Fourier al câmpului electric emis, demonstrând conversia la o frecvență mai înaltă: \(\omega_1 \approx 22.8 = 4 \gamma^2 \omega_0\), cu \(\gamma = 10\) și \(\omega_0 = 0.057\)}
-  \end{figure}
+  \begin{columns}[c]
+    \begin{column}{0.58\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{figures/electric_field_spectrum.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \begin{itemize}
+        \item Spectrul Fourier confirmă exact efectul Doppler relativist: \(\omega_1 \approx 4\gamma^2 \omega_0\).
+        \item Pentru \(\gamma = 10\), frecvența crește de \textbf{400 de ori} (\(\omega_0 = 0{,}057 \to \omega_1 \approx 22{,}8\) u.a.).
+        \item Fizic: de la un laser obișnuit (\(\sim 800\,\text{nm}\)) direct la \textbf{raze X moi} (\(\sim 2\,\text{nm}\))!
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Vortexul optic}
+  \frametitle{Vortexul optic --- distribuția de fază}
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.75\textwidth]{figures/detector_vortex_phase.pdf}
-    \caption{Faza radiației emise, arătând formarea unui vortex optic}
-  \end{figure}
+  \begin{columns}[c]
+    \begin{column}{0.56\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[height=0.66\textheight]{figures/detector_vortex_phase.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \begin{itemize}
+        \item Faza câmpului electric radiat pe suprafața detectorului.
+        \item Faza parcurge un ciclu complet de la \(-\pi\) la \(+\pi\) în jurul centrului.
+        \item Această variație azimutală continuă este dovada directă a formării unui \textbf{vortex optic}.
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
   \frametitle{Densitatea de moment cinetic orbital (OAM)}
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.75\textwidth]{figures/detector_oam_density.pdf}
-    \caption{Densitatea de moment cinetic orbital (OAM) a radiației emise, măsurată pe detector (\(\diff L_z / \diff A\))}
-  \end{figure}
+  \begin{columns}[c]
+    \begin{column}{0.56\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[height=0.66\textheight]{figures/detector_oam_density.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \begin{itemize}
+        \item Densitatea de moment cinetic orbital pe detector (\(\diff L_z / \diff A\)).
+        \item Semnul uniform pozitiv (roșu) pe întreg inelul confirmă un \textbf{transfer curat și coerent} al OAM către radiația de raze X.
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \section{Concluzii}
@@ -321,9 +406,9 @@
 \begin{frame}
   \frametitle{Concluzii}
   \begin{itemize}
-    \item Lumina poate fi ,,învârtită'' ca un tirbușon, dobândind astfel \textbf{moment cinetic orbital}, pe care îl putem folosi pentru a dezvolta noi metode de a interacționa cu materia.
-    \item Reflexia luminii de pe o \textbf{oglindă zburătoare relativistă} comprimă lungimea de undă, amplifică coerent emisia și conservă momentul cinetic orbital.
-    \item Simulările numerice eficiente ne permit să explorăm aceste regimuri extreme și să pregătim \textbf{viitoarele experimente}.
+    \item Lumina poate fi ,,învârtită'' ca un tirbușon (fascicule \textbf{Laguerre-Gauss}), dobândind \textbf{moment cinetic orbital}, util pentru noi metode de interacțiune cu materia.
+    \item Reflexia luminii de pe o \textbf{oglindă zburătoare relativistă} comprimă lungimea de undă (până la raze X), amplifică \textbf{coerent (superradiant)} emisia și conservă momentul cinetic orbital.
+    \item Simulările numerice eficiente pe GPU ne permit să explorăm aceste regimuri extreme și să pregătim \textbf{viitoarele experimente}.
   \end{itemize}
 \end{frame}
 
@@ -334,15 +419,22 @@
 
   \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/eli-np-laser-system.jpg}
+    \includegraphics[height=0.52\textheight]{figures/eli-np-laser-system.jpg}
     \caption{Sistemul de lasere de la ELI-NP. Imagine de pe \href{https://www.worldrecordacademy.org}{worldrecordacademy.org}}
   \end{figure}
 \end{frame}
 
 \begin{frame}
-  \centering{
-    \huge{Mulțumesc!}
-  }
+  \centering
+  {\huge Mulțumesc!}
+
+  \vspace{1cm}
+  {\large Întrebări?}
+
+  \vspace{1cm}
+  \small
+  % \href{mailto:constantin.majeri@s.unibuc.ro}{\texttt{constantin.majeri@s.unibuc.ro}} \\[0.3em]
+  % \href{https://github.com/GabrielMajeri/electrodynamics-simulations}{\texttt{github.com/GabrielMajeri/electrodynamics-simulations}}
 \end{frame}
 
 \begin{frame}[allowframebreaks]
@@ -351,30 +443,44 @@
   \printbibliography
 \end{frame}
 
-\section{Backup slides}
+\section{Slide-uri suplimentare}
 
 \begin{frame}
-  \frametitle{Ecuațiile lui Maxwell}
+  \frametitle{Reflexia momentului cinetic orbital}
 
-  Undele pe care le studiem sunt soluții ale \textbf{ecuațiilor lui Maxwell} \cite{Maxwell1865,Jackson1999,Griffiths2023}:
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.60\textheight]{figures/extended_oam_vector_configuration.pdf}
+    \caption{Reflexia momentului cinetic orbital (OAM) pe o oglindă zburătoare relativistă. Vectorul momentului cinetic orbital își păstrează orientarea în spațiu, devenind antiparalel cu direcția de propagare a fasciculului reflectat.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ecuațiile lui Maxwell și forța Lorentz}
+
+  Câmpurile electromagnetice sunt guvernate de \textbf{ecuațiile lui Maxwell} \cite{Maxwell1865,Jackson1999,Griffiths2023}:
 
   \begin{align*}
-    &\symbf{\nabla} \cdot \symbf{E} = \frac{\rho}{\epsilon_0} \tag{Legea lui Gauss} \\[0.2em]
-    &\symbf{\nabla} \times \symbf{E} = - \frac{\partial \symbf{B}}{\partial t} \tag{Legea lui Faraday} \\[0.2em]
-    &\symbf{\nabla} \cdot \symbf{B} = 0 \\[0.2em]
-    &\symbf{\nabla} \times \symbf{B} = \mu_0 \symbf{J} + \mu_0 \epsilon_0 \frac{\partial \symbf{E}}{\partial t} \tag{Ampère-Maxwell} \\[0.2em]
-    &\symbf{F} = q \left(\symbf{E} + \symbf{v} \times \symbf{B}\right) \tag{Forța Lorentz}
+    &\symbf{\nabla} \cdot \symbf{E} = \frac{\rho}{\epsilon_0} \tag{Legea lui Gauss} \\[0.15em]
+    &\symbf{\nabla} \times \symbf{E} = - \frac{\partial \symbf{B}}{\partial t} \tag{Legea lui Faraday} \\[0.15em]
+    &\symbf{\nabla} \cdot \symbf{B} = 0 \\[0.15em]
+    &\symbf{\nabla} \times \symbf{B} = \mu_0 \symbf{J} + \mu_0 \epsilon_0 \frac{\partial \symbf{E}}{\partial t} \tag{Ampère-Maxwell}
   \end{align*}
+
+  iar mișcarea fiecărui electron este determinată de \textbf{forța Lorentz}:
+  \[
+    \symbf{F} = q \left(\symbf{E} + \symbf{v} \times \symbf{B}\right)
+  \]
 \end{frame}
 
 \begin{frame}
   \frametitle{Potențialele Liénard-Wiechert}
 
-  Potențialele scalar și vectorial pentru radiația emisă de o sarcină în mișcare sunt date de formulele Liénard-Wiechert, care se scriu în funcție de poziția observatorului \(\symbf{x_0}\) și de timpul întârziat \(t_r\),
+  Potențialele scalar și vectorial pentru radiația emisă de o sarcină în mișcare sunt date de formulele Liénard-Wiechert, scrise în funcție de poziția observatorului \(\symbf{x}_0\) și de timpul întârziat \(t_r\):
 
   \begin{align*}
-    \Phi\left(\symbf{x}_0, t_r\right) = \frac{e_0}{4 \pi \epsilon_0} \, \frac{1}{\abs{\symbf{x}_0 - \symbf{r}_0 (t)}} \, \frac{1}{1 - \symbf{\beta}(t_r) \cdot \symbf{n}(t_r)} \\[0.5em]
-    \symbf{A} (\symbf{x}_0, t_r) = \frac{e_0}{4 \pi \epsilon_0} \, \frac{1}{\abs{\symbf{x}_0 - \symbf{r}_0(t)}} \, \frac{\symbf{\beta}(t_r)}{1 - \symbf{\beta}(t_r) \cdot \symbf{n}(t_r)}
+    \Phi\left(\symbf{x}_0, t\right) &= \frac{e_0}{4 \pi \epsilon_0} \, \frac{1}{\abs{\symbf{x}_0 - \symbf{r}_0 (t_r)}} \, \frac{1}{1 - \symbf{\beta}(t_r) \cdot \symbf{n}(t_r)} \\[0.5em]
+    \symbf{A} \left(\symbf{x}_0, t\right) &= \frac{e_0}{4 \pi \epsilon_0 c} \, \frac{1}{\abs{\symbf{x}_0 - \symbf{r}_0(t_r)}} \, \frac{\symbf{\beta}(t_r)}{1 - \symbf{\beta}(t_r) \cdot \symbf{n}(t_r)}
   \end{align*}
-unde \(\symbf{r}_0(t)\) este poziția particulei, \(\symbf{\beta}(t_r) = \symbf{v}(t_r) / c\) este factorul Lorentz și \(\symbf{n}(\symbf{x}_0, t_r)) = \symbf{R}(\symbf{x}_0, t_r)) / R(\symbf{x}_0, t_r))\) este direcția de observație.
+  unde \(\symbf{r}_0(t_r)\) este poziția particulei la timpul întârziat, \(\symbf{\beta}(t_r) = \symbf{v}(t_r) / c\) este viteza normalizată și \(\symbf{n}(\symbf{x}_0, t_r) = \symbf{R}(\symbf{x}_0, t_r) / R(\symbf{x}_0, t_r)\), cu \(\symbf{R}(\symbf{x}_0, t_r) = \symbf{x}_0 - \symbf{r}_0(t_r)\), este direcția de observație.
 \end{frame}
